@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBot - Your Smart Fitness Coach</title>
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(90deg, #444, #888); /* Light grey gradient */
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+        .hero {
+            background: black;
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Neon green glow effect */
+        }
+        h1 {
+            color: #9ff500; /* Neon green */
+        }
+        p {
+            font-size: 18px;
+            color: #bbb; /* Light grey text */
+        }
+        .cta-button {
+            background: #9ff500; /* Neon green */
+            color: black;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background: #88e400; /* Slightly darker neon green */
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .feature-box {
+            background: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+        .fitbot-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+        input, select {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            background: #2a2a2a;
+            color: #fff;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background: #222;
+            color: #9ff500; /* Neon green text */
+        }
+    </style>
+    <script>
+        function scrollToFitBotPlan() {
+            document.getElementById("fitbot-plan-section").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateFitBotPlan() {
+            let age = document.getElementById("age").value;
+            let height = document.getElementById("height").value;
+            let weight = document.getElementById("weight").value;
+            let goal = document.getElementById("goal").value;
+
+            let resultText = `Generating FitBot Plan for Age: ${age}, Height: ${height} cm, Weight: ${weight} kg, Goal: ${goal}...`;
+            document.getElementById("fitbot-results").innerText = resultText;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="fitbot_logo.png" alt="FitBot Logo" class="logo">
+        FitBot - Your Smart Fitness Coach
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Smart Workouts & Meal Plans</h1>
+            <p>Personalized fitness plans tailored by FitBot, based on your goals.</p>
+            <button class="cta-button" onclick="scrollToFitBotPlan()">Get Started</button>
+        </div>
+
+        <div class="features">
+            <div class="feature-box">
+                <h2>🏋️ FitBot Workouts</h2>
+                <p>Get customized workout plans for muscle gain, fat loss, or endurance.</p>
+            </div>
+            <div class="feature-box">
+                <h2>🥗 Smart Meal Plans</h2>
+                <p>Tailored nutrition guides based on your fitness goals.</p>
+            </div>
+            <div class="feature-box">
+                <h2>🤖 FitBot Coaching</h2>
+                <p>Track progress & get real-time fitness guidance.</p>
+            </div>
+        </div>
+
+        <div class="fitbot-section" id="fitbot-plan-section">
+            <h2>Generate Your FitBot Plan</h2>
+            <p>Enter your details below and get a personalized fitness plan powered by FitBot.</p>
+            <input type="number" id="age" placeholder="Enter your age" required>
+            <input type="number" id="height" placeholder="Enter your height (cm)" required>
+            <input type="number" id="weight" placeholder="Enter your weight (kg)" required>
+            <select id="goal">
+                <option value="muscle gain">Muscle Gain</option>
+                <option value="fat loss">Fat Loss</option>
+                <option value="endurance">Endurance</option>
+            </select>
+            <button class="cta-button" onclick="generateFitBotPlan()">Generate Plan</button>
+            <p id="fitbot-results"></p>
+        </div>
+    </div>
+
+    <footer>© 2025 FitBot | Your Smart Fitness Coach</footer>
+</body>
+</html>
